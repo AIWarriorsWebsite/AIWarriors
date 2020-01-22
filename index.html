@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>AI Warriors</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+	</head>
+
+	<body class="is-preload">
+
+		<div id="wrapper" class="fade-in">
+			<div id="intro">
+				<h1>AI Warriors</h1>
+				<p>Modular Architecture for StarCraft II with Deep Reinforcement Learning</p>
+				<ul class="actions">
+					<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+				</ul>
+			</div>
+
+			<header id="header">
+				<a href="#" class="logo">AI Warriors</a>
+			</header>
+
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="#myAbstract">Abstract</a></li>
+					<li><a href="#myArchitecture">Proposed Architecture</a></li>
+					<li><a href="#myOverview">Overview of Approach</a></li>
+					<li><a href="#myDemo">Demo</a></li>
+				</ul>
+			</nav>
+
+			<div id="main">
+
+				<article class="post featured" id="myAbstract">
+					<header class="major">
+						<h2>Abstract</h2>
+						<p style="text-align: left;font-family: 'Times New Roman';font-style: normal;line-height: 1.25em;font-size: 1.25em">StarCraft II is a real-time strategy game that involves collecting resources, building production facilities, researching technologies, and managing armies to defeat the opponent. Its predecessor StarCraft has attracted numerous research efforts, including hierarchical planning and tree search (see survey by Ontanon). We think StarCraft II is a very ideal platform for developing and testing learning algorithms. Our focus is mainly on exploring potential advantages of a hierarchical structure, of human input and the heterogeneous setting in multi-agent systems or multi-agent reinforcement learning (MARL).</p>
+					</header>
+
+					<header class="major">
+						<h2 id="myArchitecture">Proposed Architecture</h2>
+					</header>
+
+					<img src="images/architecture.png" alt="Proposed Architecture" class="image main"/>
+
+					<header class="major">
+						<h2 id="myOverview">Overview of Approach</h2>
+						<h3 style="text-transform: none; font-size: 2em">
+							Hierarchical architecture
+						</h3>
+						<p style="text-align: left;font-family: 'Times New Roman';font-style: normal;line-height: 1.25em;font-size: 1.25em">
+							<i>Command Center</i> (in blue box) is the module responsible for high-level decision of how to combine and schedule the actions decided by the individual <i>submodules</i> (in yellow boxes). The <i>submodules</i> are responsible for lower-level decision making such as which unit to produce or build (<i>Build Order</i>), whether to advance or retreat (<i>Tactics</i>) or the precise manoeuvre of units (<i>Micro-management</i>).
+						</p>
+
+						<h3 style="text-transform: none; font-size: 2em">
+							Human command interface
+						</h3>
+						<p style="text-align: left;font-family: 'Times New Roman';font-style: normal;line-height: 1.25em;font-size: 1.25em">
+							We introduce the human command interface to allow human input. The reason is to provide some guidance and human intuition for the agent in some completely unseen scenario, so as to help the agent both make the specified decision in this unfamiliar scenario, and  learning the desirability of such decision by specifically exploiting it.
+						</p>
+
+						<h3 style="text-transform: none; font-size: 2em">
+							Heterogeneous
+						</h3>
+						<p style="text-align: left;font-family: 'Times New Roman';font-style: normal;line-height: 1.25em;font-size: 1.25em">
+							The <i>submodules</i> can be constructed by scripts, or learning agents, or a hybrid of both. Not only do they serve different functionalities, they can also be designed using different constructs. For instance, in typical RTS games <i>Build Order</i> is usually well studied and a well-written script may be sufficient for this submodule. However, the <i>Tactics</i> is much more complicated to written in well-contained logic and might be implemented using a reinforcement learning agent.
+						</p>
+					</header>
+
+					<header class="major">
+						<h2 id="myDemo">Demo</h2>
+					</header>
+
+					<div class="my-video-container">
+						<iframe width="100%" src="https://www.youtube.com/embed/lknGUgBhrSo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+
+				</article>
+
+				<section class="posts">
+
+					<article>
+						<header>
+							<h3 style="text-transform: none">zergling rush VS easy protoss abridged</h3>
+						</header>
+						<img class="image fit" src="images/withCommand.gif" alt="zergling rush VS easy protoss abridged" />
+						<p style="text-align: left;font-family: 'Times New Roman';font-style: normal;line-height: 1.25em;font-size: 1.25em">
+							A zergling rush bot against <i>easy</i> built-in bot of protoss. We command the bot to attack once the human ‘feels’ it has amassed a sufficiently strong army of zerglings.
+						</p>
+
+					</article>
+
+					<article>
+						<header>
+							<h3 style="text-transform: none">zergling rush VS medium protoss abridged</h3>
+						</header>
+						<img class="image fit" src="images/withoutCommand.gif" alt="zergling rush VS medium protoss abridged" />
+						<p style="text-align: left;font-family: 'Times New Roman';font-style: normal;line-height: 1.25em;font-size: 1.25em">
+							The same zergling rush bot against <i>medium</i> built-in bot of protoss. We <b>never</b> command the bot to attack. The built-in AI finally amassed some army to attack us. The first wave of their attack, consisting of only ground units, was fended off. But their second wave included air units (which the zerglings cannot attack), finished our bot off.
+						</p>
+
+					</article>
+
+				</section>
+
+			</div>
+
+
+			<div id="copyright">
+				<ul><li>&copy; copyright</li><li>Maybe <a href="#">a link</a></li></ul>
+			</div>
+
+			</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
