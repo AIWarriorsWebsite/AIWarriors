@@ -39,7 +39,7 @@
 				<article class="post featured" id="myAbstract">
 					<header class="major">
 						<h2>Abstract</h2>
-						<p style="text-align: left;font-family: 'Times New Roman';font-style: normal;line-height: 1.25em;font-size: 1.25em">StarCraft II is a real-time strategy game that involves collecting resources, building production facilities, researching technologies, and managing armies to defeat the opponent. Its predecessor StarCraft has attracted numerous research efforts, including hierarchical planning and tree search (see survey by Ontanon). We think StarCraft II is a very ideal platform for developing and testing learning algorithms. Our focus is mainly on exploring potential advantages of a hierarchical structure, of human input and the heterogeneous setting in multi-agent systems or multi-agent reinforcement learning (MARL).</p>
+						<p style="text-align: justify;font-family: 'Times New Roman';font-style: normal;line-height: 1.25em;font-size: 1.25em">Reinforcement learning has been achieving great successes in increasingly complex environments, such as AlphaStar at StarCraft II, or in robotics. However, these agents are not very robust to changes in the environment, or in their objectives. In order to achieve lifelong learning of an RL agent, we propose a hierarchical architecture combined with a human input interface which aims to introduce expert knowledge based on human observation of the changes to the environment or the objectives in order to guide the trained/learned agent to make better planning decisions and such guided planning experience can in turn be used in the learning process. The hierarchical architecture isolates the subtasks which the agent has already learnt. The human input interface allows expert to introduce guidance on how best to combine the skills of the agent on those subtasks. The RL task is modelled as an (PO)MDP and we explore adopting both conventional RL methods as well as designing new ones more suitable in this situation.</p>
 					</header>
 
 					<header class="major">
@@ -53,21 +53,21 @@
 						<h3 style="text-transform: none; font-size: 2em">
 							Hierarchical architecture
 						</h3>
-						<p style="text-align: left;font-family: 'Times New Roman';font-style: normal;line-height: 1.25em;font-size: 1.25em">
+						<p style="text-align: justify;font-family: 'Times New Roman';font-style: normal;line-height: 1.25em;font-size: 1.25em">
 							<i>Command Center</i> (in blue box) is the module responsible for high-level decision of how to combine and schedule the actions decided by the individual <i>submodules</i> (in yellow boxes). The <i>submodules</i> are responsible for lower-level decision making such as which unit to produce or build (<i>Build Order</i>), whether to advance or retreat (<i>Tactics</i>) or the precise manoeuvre of units (<i>Micro-management</i>).
 						</p>
 
 						<h3 style="text-transform: none; font-size: 2em">
 							Human command interface
 						</h3>
-						<p style="text-align: left;font-family: 'Times New Roman';font-style: normal;line-height: 1.25em;font-size: 1.25em">
+						<p style="text-align: justify;font-family: 'Times New Roman';font-style: normal;line-height: 1.25em;font-size: 1.25em">
 							We introduce the human command interface to allow human input. The reason is to provide some guidance and human intuition for the agent in some completely unseen scenario, so as to help the agent both make the specified decision in this unfamiliar scenario, and  learning the desirability of such decision by specifically exploiting it.
 						</p>
 
 						<h3 style="text-transform: none; font-size: 2em">
 							Heterogeneous
 						</h3>
-						<p style="text-align: left;font-family: 'Times New Roman';font-style: normal;line-height: 1.25em;font-size: 1.25em">
+						<p style="text-align: justify;font-family: 'Times New Roman';font-style: normal;line-height: 1.25em;font-size: 1.25em">
 							The <i>submodules</i> can be constructed by scripts, or learning agents, or a hybrid of both. Not only do they serve different functionalities, they can also be designed using different constructs. For instance, in typical RTS games <i>Build Order</i> is usually well studied and a well-written script may be sufficient for this submodule. However, the <i>Tactics</i> is much more complicated to written in well-contained logic and might be implemented using a reinforcement learning agent.
 						</p>
 					</header>
@@ -89,7 +89,7 @@
 							<h3 style="text-transform: none">zergling rush VS easy protoss abridged</h3>
 						</header>
 						<img class="image fit" src="images/withCommand.gif" alt="zergling rush VS easy protoss abridged" />
-						<p style="text-align: left;font-family: 'Times New Roman';font-style: normal;line-height: 1.25em;font-size: 1.25em">
+						<p style="text-align: justify;font-family: 'Times New Roman';font-style: normal;line-height: 1.25em;font-size: 1.25em">
 							A zergling rush bot against <i>easy</i> built-in bot of protoss. We command the bot to attack once the human ‘feels’ it has amassed a sufficiently strong army of zerglings.
 						</p>
 
@@ -100,7 +100,7 @@
 							<h3 style="text-transform: none">zergling rush VS medium protoss abridged</h3>
 						</header>
 						<img class="image fit" src="images/withoutCommand.gif" alt="zergling rush VS medium protoss abridged" />
-						<p style="text-align: left;font-family: 'Times New Roman';font-style: normal;line-height: 1.25em;font-size: 1.25em">
+						<p style="text-align: justify;font-family: 'Times New Roman';font-style: normal;line-height: 1.25em;font-size: 1.25em">
 							The same zergling rush bot against <i>medium</i> built-in bot of protoss. We <b>never</b> command the bot to attack. The built-in AI finally amassed some army to attack us. The first wave of their attack, consisting of only ground units, was fended off. But their second wave included air units (which the zerglings cannot attack), finished our bot off.
 						</p>
 
